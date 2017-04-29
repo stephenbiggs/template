@@ -64,3 +64,4 @@ end
 # Custom Gems May 2017
 gem 'foundation-rails'
 gem 'simple_form'
+gem 'jquery-rails'
