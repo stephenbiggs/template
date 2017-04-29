@@ -64,3 +64,4 @@ end
 # Custom Gems May 2017
 gem 'foundation-rails', '~> 6.3', '>= 6.3.1'
 gem 'simple_form'
+gem 'bcrypt', '~> 3.1', '>= 3.1.7'
