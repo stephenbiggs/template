@@ -65,3 +65,9 @@ end
 gem 'foundation-rails'
 gem 'simple_form'
 gem 'jquery-rails'
+gem 'activeadmin'
+# Plus integrations with:
+gem 'devise'
+gem 'cancan' # or cancancan
+gem 'draper'
+gem 'pundit'
