@@ -24,6 +24,30 @@ class UsersController < ApplicationController
   end
 
 
+  def edit
+    @user = current_user
+  end
+
+
+  def update
+    @user = current_user
+    if @user.update(user_params)
+      redirect_to root_path
+    else
+      render 'edit'
+    end
+  end
+
+
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    reset_session
+    flash[:success] = "Your account has been deleted"
+    redirect_to root_path
+  end
+
+
 
   def user_params
     params.require(:user).permit(:email, :password, :password_confirmation)
