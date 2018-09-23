@@ -9,7 +9,9 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.0'
+gem 'rails', '~> 5.2.1'
+#### Add Bootsnap for Rails 5.2.1 ####
+gem 'bootsnap', require: false
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
@@ -61,8 +63,7 @@ group :production do
   gem 'rails_12factor'
 end
 
-# Custom Gems May 2017
-gem 'foundation-rails'
+# Custom Gems September 2018
 gem 'simple_form'
 gem 'jquery-rails'
 gem 'activeadmin'
