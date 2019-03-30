@@ -5,6 +5,10 @@ Rails.application.routes.draw do
 
   root "users#index"
 
-  resources :users
+  resources :users do
+    member do
+      get :confirm_email
+    end
+  end
   resource :session
 end

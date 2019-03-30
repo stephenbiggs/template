@@ -11,9 +11,17 @@ class SessionsController < ApplicationController
     @user = User.find_by_email(@email)
 
     if @user.present? and @user.authenticate(@password)
-      flash[:success] = "You are logged in"
-      session[:uid] = @user.id
-      redirect_to root_path
+
+      if @user.email_confirmed
+        flash[:success] = "You are logged in"
+        session[:uid] = @user.id
+        redirect_to root_path
+      else
+        flash[:error] = "Please activate your account by following the 
+        instructions in the account confirmation email you received to proceed"
+        render 'new'
+      end
+
     else
       flash[:error] = "Your details are incorrect"
       render 'new'

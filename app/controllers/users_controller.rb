@@ -15,10 +15,13 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      flash[:success] = "You are now registered"
-      session[:uid] = @user.id
+      UserMailer.registration_confirmation(@user).deliver
+      flash[:success] = "Please confirm your email address to continue"
+      # removed auto sign-in as now want user to confirm registration first
+      # session[:uid] = @user.id
       redirect_to root_path
     else
+      flash[:error] = "Ooooppss, something went wrong!"
       render 'new'
     end
   end

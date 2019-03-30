@@ -1,5 +1,7 @@
 class User < ApplicationRecord
 
+  before_create :confirmation_token
+  
   validates :email, presence: true, uniqueness: true
   validates_format_of :email, :with => /\A[^@]+@([^@\.]+\.)+[^@\.]+\z/
   validate :password_complexity
@@ -13,5 +15,12 @@ class User < ApplicationRecord
        end
     end
   end
+
+  private
+    def confirmation_token
+      if self.confirm_token.blank?
+        self.confirm_token = SecureRandom.urlsafe_base64.to_s
+      end
+    end
 
 end

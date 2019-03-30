@@ -1,1 +1,14 @@
 <h1>User home</h1>
+
+<% if logged_in? %>
+
+  <h2>You are logged in</h2>
+
+<% else %>
+
+  <h2>Please log in or register</h2>
+  
+  <%= link_to "Log-in", new_session_path %>
+  <%= link_to "Register", new_user_path %>
+
+<% end %>
