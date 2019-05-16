@@ -1,5 +1,11 @@
 {
   "name": "template2017",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "@rails/webpacker": "^4.0.2",
+    "tailwindcss": "^1.0.1"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^3.3.1"
+  }
 }

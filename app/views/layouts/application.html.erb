@@ -8,53 +8,43 @@
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= csrf_meta_tags %>
   </head>
 
   <body>
 
-    <!-- Header -->
-    <div id="header" class="grid_12">
-
-      <h1>Header</h1>
-
-    </div>
-    <!-- Header END -->
+    <header></header>
 
 
     <!-- Main Body -->
-    <div id="content" class="grid_12">
+    <section id="content">
 
       <% if flash[:error].present? %>
-        <div data-alert class="grid_12 callout warning">
+        <div data-alert>
           <%= flash[:error] %>
         </div>
       <% end %>
 
       <% if flash[:success].present? %>
-        <div data-alert class="grid_12 callout success">
+        <div data-alert>
           <%= flash[:success] %>
         </div>
       <% end %>
 
-      <div class="centered"> <!-- Remove if non fixed width -->
 
 
                                                         <%= yield %>
 
-      </div>
+      
 
-    </div>
+    </section>
     <!-- Main Body END -->
 
 
-    <!-- Footer -->
-    <div id="footer" class="grid_12">
-
-      <h3>Footer</h3>
-
-    </div>
-    <!-- Footer END -->
+    <footer></footer>
+  
 
   </body>
 </html>

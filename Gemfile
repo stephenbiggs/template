@@ -68,6 +68,7 @@ end
 gem 'simple_form'
 gem 'jquery-rails'
 gem 'activeadmin'
+gem 'webpacker', '~> 4.x'
 # Plus integrations with:
 gem 'devise'
 gem 'cancan' # or cancancan
