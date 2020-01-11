@@ -3,6 +3,7 @@
   "private": true,
   "dependencies": {
     "@rails/webpacker": "^4.0.2",
+    "serialize-javascript": "^2.1.2",
     "tailwindcss": "^1.0.1"
   },
   "devDependencies": {
